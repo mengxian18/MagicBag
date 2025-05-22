@@ -68,5 +68,11 @@ git checkout v1.0
 拉取代码时若遇冲突，需手动修改冲突文件，标记为已解决后重新提交推送。
 仓库地址正确性
 确保远程仓库地址（如https://github.com/mengxian18/test.git）正确，避免因 URL 错误导致连接失败。
-
+## 六、实际遇到问题
+1.fatal: unable to access 'https://github.com/mengxian18/MagicBag.git/': Failed to
+ connect to github.com port 443 after 21073 ms: Could not connect to server
+修改远程仓库地址为 SSH 格式：
+git remote set-url origin git@github.com:mengxian18/MagicBag.git
+重新推送代码，执行强制推送（注意远程分支是否存在）：
+git push -u origin --force git_use
 通过以上步骤，可完成从本地仓库创建到远程协作的全流程操作。如需进一步调试或特定场景支持，请提供更多细节。
