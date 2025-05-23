@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import json
+import openpyxl
 import os
 import tempfile
 from io import BytesIO
@@ -319,7 +320,7 @@ def main():
                 st.write("无法读取文件内容，无法显示可用字段")
             
             # Excel列名
-            st.subheader("Excel列名（可选）")
+            st.subheader("自定义输出列名（可选）")
             st.markdown("""
             为提取的字段指定自定义列名（与字段列表一一对应）。
             - 若不设置，将保持原字段名
