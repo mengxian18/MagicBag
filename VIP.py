@@ -17,17 +17,12 @@ def generate_embed_url(video_url):
         return base_url + video_url
     return None
 
-# 嵌入播放器
-if st.button("播放VIP视频"):
+# 返回解析网址
+if st.button("生成解析链接"):
     embed_url = generate_embed_url(video_url)
     if embed_url:
-        st.success("正在加载VIP视频，请稍候...")
-        st.components.v1.html(
-            f"""
-            <iframe src="{embed_url}" width="700" height="450" frameborder="0" allowfullscreen></iframe>
-            """,
-            height=500,
-        )
+        st.success("解析链接生成成功！")
+        st.write(f"{embed_url}")
     else:
         st.error("请输入有效的视频链接！")
 
